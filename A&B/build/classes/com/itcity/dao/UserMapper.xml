@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- resultMap主要功能是当类里面的字符和数据库中的字段名不一样时  在这里面进行标识 -->
+<mapper namespace="com.itcity.dao.UserDao">
+    <insert id="insertUser" parameterType="User">
+        insert into s_user values(#{name},#{passwd},#{age},#{gender}) 
+    </insert>
+    <select id="selUser" parameterType="String" resultType="User">
+        select * from s_user where name = #{name}
+    </select>
+</mapper>

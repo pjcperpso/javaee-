@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- resultMap主要功能是当类里面的字符和数据库中的字段名不一样时  在这里面进行标识 -->
+<mapper namespace="com.itcity.dao.TitleDao">
+    <select id="selAllTitle" parameterType="int" resultType="Title">
+        select * from s_title where sort = #{id}
+    </select>
+    <select id="selOneTitle" parameterType="int" resultType="Title">
+        select * from s_title where id = #{id}
+    </select>
+</mapper>

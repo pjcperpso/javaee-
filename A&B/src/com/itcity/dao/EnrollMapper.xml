@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- resultMap主要功能是当类里面的字符和数据库中的字段名不一样时  在这里面进行标识 -->
+<mapper namespace="com.itcity.dao.EnrollDao">
+    <insert id="addEnroll" parameterType="Enroll">
+        <selectKey keyProperty="id" resultType="long" order="BEFORE">
+            select sign_seq.nextval from dual
+        </selectKey>
+        insert into s_sign values(#{id},#{c_name},#{u_name},#{name},#{shenfen},#{age},#{gender},#{school},#{email},#{phone})
+    </insert>
+</mapper>
