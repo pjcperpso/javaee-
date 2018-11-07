@@ -1,0 +1,169 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <!-- 标题栏 -->
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#travleandroom">旅行<span class="sr-only">(current)</span></a></li>
+        <li><a href="#travleandroom">住店</a></li>
+        <li><a href="#">交通</a></li>
+        <li><a href="#price">特惠</a></li>
+
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+       	  <li><a href="/Samecity_Web/personal">个人中心</a></li>
+          <li><a href="/Samecity_Web/Login.html">登录</a></li>
+          <li><a href="/Samecity_Web/register.html">注册</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!-- 主题 -->
+<div class="jumbotron">
+  <h1 align="center">Hello, Mr or Miss!</h1>
+  <p align="center">welome to the localhost:8888/Samecity_Web/index.html</p>
+  <p align="center"><a class="btn btn-success btn-lg" href="#" role="button">Learn more</a></p>
+</div>
+
+<!-- 交通表说明-->
+<div class="alert alert-success" role="alert" style="margin-left:30px">
+  <a href="#" class="alert-link" style="padding-left:30px;font-size:18px">交通出行</a>
+</div>
+<div class="row" style="padding-left:30px;padding-right:30px;margin-left: 50px;margin-right: 50px">
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="image/plane.png" alt="..." style="padding-top: 10px">
+      <div class="caption">
+        <h3>飞机</h3>
+        <p>你与世界只差一张机票</p>
+        <p><a href="/Samecity_Web/userair" class="btn btn-primary" style="width:100px" role="button">点击进入</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="image/train.png" alt="..." style="padding-top: 10px">
+      <div class="caption">
+        <h3>火车</h3>
+        <p>火车是沿途观赏美景的最佳交通工具</p>
+        <p><a href="#" class="btn btn-primary" style="width:100px" role="button">点击进入</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="image/car.png" alt="..." style="padding-top: 10px">
+      <div class="caption">
+        <h3>神州租车</h3>
+        <p>神州租车，走走停停，把世界装进口袋</p>
+        <p><a href="/Samecity_Web/userair" class="btn btn-primary" style="width:100px" role="button">点击进入</a></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="image/bike.png" alt="..." style="padding-top: 10px">
+      <div class="caption">
+        <h3>神州租车</h3>
+        <p>神州租车，走走停停，把世界装进口袋</p>
+        <p><a href="#" class="btn btn-primary" style="width:100px" role="button">点击进入</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<hr style="color:#B0B0B0">
+
+<!--旅行说明-->
+<div class="alert alert-info" role="alert" style="margin-left:30px;margin-top:45px">
+  <a href="#" class="alert-link" style="font-size:18px;padding-left:30px">旅行住宿攻略</a>
+</div>
+<div class="list-group" style="margin-left:80px;margin-right:150px;" id="travleandroom">
+  <a href="#" class="list-group-item">
+    <h4 class="list-group-item-heading" style="color: #D9EDF7">旅行_Travle</h4>
+    <p class="list-group-item-text">发现意想不到的世界_大千世界等你探索！</p>
+  </a>
+  <a href="#" class="list-group-item" style="margin-top: 8px">
+    <h4 class="list-group-item-heading" style="color: #D9EDF7">住宿_Room</h4>
+    <p class="list-group-item-text">花超低价格_住精品酒店_享总统待遇!</p>
+  </a>
+</div>
+
+<hr style="color:#B0B0B0">
+
+<div class="alert alert-danger" role="alert" style="margin-left:30px;margin-top:45px">
+  <a href="#" class="alert-link" style="font-size: 18px;padding-left:30px">特惠系列</a>
+</div>
+
+<!-- 届时需要给一个js 当鼠标移动到动态 -->
+<ul class="media-list" style="margin-left: 80px" id="price">
+  <li class="media">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object" src="image/hotel.png" alt="...">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">酒店满减大优惠</h4>
+      6.1亲子大酒店，好礼送不停!
+    </div>
+  </li>
+  <hr margin-left: 80px">
+  
+  <li class="media" style="margin-left: 80px">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object" src="image/travle.png" alt="旅行的意义">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">暑假旅行大礼包</h4>
+      	暑期特惠，结伴旅行还等什么，错过就是一辈子！
+    </div>
+  </li>
+  <hr style="margin-left: 160px">
+  
+  <li class="media" style="margin-left: 160px">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object" src="image/ticket.png" alt="订票详情">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">合伙订票，满减</h4>
+      	团队订票，不愁太贵！
+    </div>
+  </li>
+</ul>
+</body>
+</html>
