@@ -7,7 +7,5 @@ import com.itcity.bean.Message;
 
 public interface MessageService {
 	void addMessage(Message message)throws Exception;
-	List<Message> selmessages(Map<String, Object> map)throws Exception;
-	List<Message> selHmessages(Map<String, Object> map)throws Exception;
-
+	List<Message> selmessages(String message)throws Exception;
 }

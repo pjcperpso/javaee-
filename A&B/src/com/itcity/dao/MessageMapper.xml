@@ -6,10 +6,7 @@
     <insert id="insertmessage" parameterType="Message" >
         insert into s_message values(#{firstname},#{secondname},#{tname},#{sortid},#{message},#{nowdate})
     </insert>
-    <select id="selmessage" parameterType="java.util.Map" resultType="Message">
-        select * from s_message where tname=#{tname} and sortid=#{sortid}
-    </select>
-    <select id="selHmessage" parameterType="java.util.Map" resultType="Message">
-        select * from s_message where tname=#{name} and sortid=#{sortid} and secondname=#{secondname}
+    <select id="selmessage" parameterType="String" resultType="Message">
+        select * from s_message where tname=#{tname}
     </select>
 </mapper>

@@ -12,40 +12,61 @@
 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 </head>
+<jsp:include page="/WEB-INF/jsp/head.jsp"></jsp:include>
 <body>
 	<%
-		List<Message> pmessage = (List<Message>)request.getSession().getAttribute("pmessage");
+		List<Message> message = (List<Message>)request.getSession().getAttribute("message");
+		User user = (User)request.getSession().getAttribute("user");
 	%>
 	<div style="margin-left: 10%;margin-right: 10%;margin-top: 2%;">
 		<div class="row">
 	  		<div class="col-lg-4">
-				<a href="#" class="thumbnail" style="width: 300px;height: 350px">
-	     		<img src="images/teacher2.png" alt="...">
+				<a href="#" class="thumbnail" style="width: 300px;height: 380px">
+	     		<img src="images/head.png" alt="...">
 	   			</a>
 	   		</div>
 	   		
 			<div class="col-lg-8">
-			<%
-				if(pmessage!=null){
-					for(int i=0;i<pmessage.size();i++){
-			%>
+			 <%
+					if(message!=null){
+						for(int i=0;i<message.size();i++){
+							if(message.get(i).getSortid()==1){
+								String pname = message.get(i).getFirstname();
+					%>
 				 <a href="#" class="thumbnail" style="text-decoration: none;">
-				 <font style="margin-left: 5%;font-family: Georgia, serif;color: #000">
-				 	<%=pmessage.get(i).getFirstname()+":"+pmessage.get(i).getMessage()+"/time:"+pmessage.get(i).getNowdate() %>
-				 </font>
-				 <form action="leavemessageservlet?sortid=2" method="post">
+				
+				 <p style="margin-left: 5%;font-family: Georgia, serif;color: #000">
+				 	<%=pname+":"+message.get(i).getMessage()+"/time:"+message.get(i).getNowdate() %>
+				 </p>
+				 	<%
+				 	for(int j=0;j<message.size();j++){
+					 	if(message.get(j).getSortid()==2&&message.get(j).getSecondname().equals(pname)){
+					 	%>
+					 		<p style="margin-left: 20%;font-family: Georgia, serif"><%=message.get(j).getFirstname()+":"+ message.get(j).getMessage()+"/time:"+message.get(j).getNowdate() %></p>
+					 	<%
+					 	}
+				 	}if(user!=null&&(user.getName().equals(message.get(i).getTname()))){
+				 	%>
+				 	
+				 <form action="leavemessageservlet?sortid=2&rname=<%=message.get(i).getFirstname() %>" method="post">
 				 	<div class="input-group" style="margin-left: 8%;margin-top: 2%;">
-  					<input type="text" class="form-control" placeholder="Please Reply!" aria-label="..." >
+  					<input type="text" name="replymessage" class="form-control" placeholder="Please Reply!" aria-label="..." >
 					  <div class="input-group-btn">
 					    <button class="btn btn-default" type="submit">回复</button>
 					  </div>
 					</div>
-		    	 </form>
+		    	 </form>		    	
+				 <%
+				 	
+								}
+				 	%>
+				 	
     			 </a>
-    		<%
+    				<% 
+							}
+						}
 					}
-				}
-    		%>
+		    		%>
 			</div>
 		</div>
 		<form action="leavemessageservlet?sortid=1" method="post">

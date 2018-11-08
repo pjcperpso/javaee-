@@ -20,27 +20,14 @@ public class MessageServiceImpl implements MessageService{
 	}
 
 	@Override
-	public List<Message> selmessages(Map<String, Object> map) throws Exception {
+	public List<Message> selmessages(String message) throws Exception {
 		SqlSession sqlSession = MybatisSqlSessionFactory.openSession(true);
 		MessageDao mapper = sqlSession.getMapper(MessageDao.class);
-		List<Message> selmessage = mapper.selmessage(map);
+		List<Message> selmessage = mapper.selmessage(message);
 		if (selmessage!=null) {
 			return selmessage;
 		}else{
 			throw new Exception("当前暂无评论数据");
 		}
 	}
-
-	@Override
-	public List<Message> selHmessages(Map<String, Object> map) throws Exception {
-		SqlSession sqlSession = MybatisSqlSessionFactory.openSession(true);
-		MessageDao mapper = sqlSession.getMapper(MessageDao.class);
-		List<Message> selHmessage = mapper.selHmessage(map);
-		if (mapper!=null) {
-			return selHmessage;
-		}else{
-			throw new Exception("当前暂无回复数据");
-		}
-	}
-
 }

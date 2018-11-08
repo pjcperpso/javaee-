@@ -36,7 +36,7 @@
 				<form action="enrollservlet" method="post" >
 						<div class="input-group">
 					      <span class="input-group-btn">
-					      <button class="btn btn-default" type="button" style="width: 300px;height: 60px;font-size: 30px;font-family: '隶书'"><%=request.getSession().getAttribute("comname") %></button>
+					      <button class="btn btn-default" type="button" style="width:100%;font-size: 30px;font-family: '隶书'"><%=request.getSession().getAttribute("comname") %></button>
 					      </span>
 					    </div><!-- /input-group -->
 					    <div class="input-group">
@@ -83,7 +83,7 @@
 					    </div><!-- /input-group -->
 					    <div class="input-group">
 					      <span class="input-group-btn">
-					      <input class="btn btn-default" type="submit" style="width: 300px;height: 60px;font-size: 30px;font-family: '隶书';margin-top:20px;margin-bottom: 50px" value="保存信息"></button>
+					      <input class="btn btn-default" type="submit" style="width:100%; font-size: 30px;font-family: '隶书';margin-top:20px;margin-bottom: 50px" value="保存信息"></button>
 					      </span>
 					    </div><!-- /input-group -->
 					<!-- <input type="submit" value="保存信息" class="btn btn-success" style="width:320px;height:40px;margin-top: 20px;margin-bottom: 50px"> -->

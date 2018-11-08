@@ -26,15 +26,14 @@ public class ToLeaveMessageServlet extends HttpServlet{
 		List<Message> selmessages = null;
 		//System.out.println(tname);
 		//ÆÀÂÛ
-		int sortid = 1;
-		HashMap<String, Object> map= new HashMap<String,Object>();
+		//int sortid = 1;
+		/*HashMap<String, Object> map= new HashMap<String,Object>();
 		map.put("tname",tname);
-		map.put("sortid", sortid);
-		System.out.println(map);
+		map.put("sortid", sortid);*/
 		MessageService messageService = new MessageServiceImpl();
 		try {
-			selmessages = messageService.selmessages(map);
-			session.setAttribute("pmessage", selmessages);
+			selmessages = messageService.selmessages(tname);
+			session.setAttribute("message", selmessages);
 		} catch (Exception e) {
 			System.out.println("fsdfsfsfsfs------------");
 			req.setAttribute("msg", e.getCause());

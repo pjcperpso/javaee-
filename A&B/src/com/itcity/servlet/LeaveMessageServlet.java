@@ -38,7 +38,6 @@ public class LeaveMessageServlet extends HttpServlet{
 		}else{
 			firstname = user.getName();
 		}
-		//Calendar c = Calendar.getInstance();
 		Date nowdate = new Date(new java.util.Date().getTime());
 		String secondname = null;
 		String pmessage = null;
@@ -47,16 +46,21 @@ public class LeaveMessageServlet extends HttpServlet{
 		if(sortid==1){
 			pmessage = req.getParameter("leavemsg");
 			secondname = tname;
-			message = new Message(firstname, secondname, tname, sortid, pmessage, nowdate);
-			System.out.println(message);
-			try {
-				messageService.addMessage(message);
-			} catch (Exception e) {
-				req.setAttribute("msg", e.getCause());
+			if (firstname.equals(tname)) {
+				System.out.println("教师本人不能参与评论,只能回复");
+			}else{
+				message = new Message(firstname, secondname, tname, sortid, pmessage, nowdate);
 			}
 		}else if(sortid==2){
-			pmessage = req.getParameter("");
-			secondname = "";
+			pmessage = req.getParameter("replymessage");
+			secondname = req.getParameter("rname");
+			message = new Message(firstname, secondname, tname, sortid, pmessage, nowdate);
+		}
+		System.out.println(message);
+		try {
+			messageService.addMessage(message);
+		} catch (Exception e) {
+			req.setAttribute("msg", e.getCause());
 		}
 		String url = "toleavemessage";
 		req.getRequestDispatcher(url).forward(req, resp);
